@@ -1,0 +1,15 @@
+name: FakePing
+version: 1.0.0
+main: dev.fakeping.FakePing
+api-version: 26.1
+description: Shows a configurable fake ping through PlaceholderAPI (%ping_fake%).
+depend: [PlaceholderAPI]
+commands:
+  fakeping:
+    description: Manage FakePing
+    usage: /fakeping <reload|status|set|clear>
+    permission: fakeping.admin
+permissions:
+  fakeping.admin:
+    description: Use /fakeping
+    default: op

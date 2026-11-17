@@ -1,0 +1,30 @@
+# FakePing - only changes the number shown by placeholders. Real latency is untouched.
+#
+# Placeholders (for TAB, scoreboards, chat, etc):
+#   %ping_fake%      fake ping
+#   %ping_real%      real ping
+#   %fakeping_ping%  fake ping (same as %ping_fake%, use this if the PlaceholderAPI
+#                    "Ping" expansion is installed and %ping_fake% doesn't work)
+
+# If false, %ping_fake% shows the real ping instead.
+enabled: true
+
+# Default range for everyone. Set min and max the same for a fixed number (0 and 0 = zero ping).
+ping:
+  min: 40
+  max: 90
+
+# The number re-rolls this often (milliseconds).
+change-interval-ms: 1500
+
+# Sometimes a number sticks around longer before re-rolling.
+long-hold:
+  chance: 0.15        # 0.0 = never, 1.0 = always
+  duration-ms: 5000
+
+# Per-player ranges (override the default). Can also be set in game:
+#   /fakeping set <player> <min> <max>     /fakeping clear <player>
+players: {}
+#  Steve:
+#    min: 0
+#    max: 0
